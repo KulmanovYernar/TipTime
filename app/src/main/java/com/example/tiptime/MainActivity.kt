@@ -17,7 +17,8 @@ class MainActivity : AppCompatActivity() {
     }
     fun calculateTip(){
         val stringInTextField = binding.costOfService.text.toString()
-        val cost = stringInTextField.toDouble()
+        val cost = stringInTextField.toDoubleOrNull()
+        if (cost == null){return}
         val selectedId = binding.tipOptions.checkedRadioButtonId
         val tipPercentage = when(selectedId){
             R.id.option_twenty_percent -> 0.20
