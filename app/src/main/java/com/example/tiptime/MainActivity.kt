@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
             tip = kotlin.math.ceil(tip)
         }
         val formattedTip = NumberFormat.getCurrencyInstance().format(tip)
+        binding.tipResult.text = getString(R.string.tip_amount,formattedTip)
 
     }
 }
